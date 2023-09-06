@@ -1,9 +1,15 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import statusCode from '../utils/status';
 import { ICustomRequest } from '../interfaces/Request';
+import Service from '../services';
 
 export default class Controller {
-  public service: any;
+  public service: Service;
+
+  constructor(service: Service) {
+    console.log('Service aqui no Controller', service.create)
+    this.service = service;
+  }
 
   public async create(req: ICustomRequest, res: Response, next: NextFunction) {
     try {
@@ -15,9 +21,9 @@ export default class Controller {
     }
   }
 
-  public async getAll(req: ICustomRequest, res: Response, next: NextFunction) {
+  public getAll = async(req: ICustomRequest, res: Response, next: NextFunction) => {
     try {
-      console.log(this, 'ESTE EH O SERIVCESAEDAWER')
+      console.log(this, 'ESTE EH O SERVICE')
       const { query, body: data, user } = req;
       const response = await this.service.getAll(query, user);
       return res.status(statusCode.success).json(response);

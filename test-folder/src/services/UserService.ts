@@ -2,8 +2,36 @@ import Service from '.'
 import CustomError from '../utils/CustomError';
 import statusCode from '../utils/status';
 
+class Model {
+  async create(data: any) {
+    return data;
+  }
+  async findAll() {
+    return [];
+  }
+  async findById(id: string) {
+    return {};
+  }
+  async findByIdAndUpdate(id: string, data: any) {
+    return data;
+  }
+  async findByIdAndDelete(id: string) {
+    return {};
+  }
+  async update(id: string, data: any) {
+    return data;
+  }
 
-export default class UserService extends Service {
+};
+
+
+export default class UserService extends Service{
+  public model: Model;
+
+  constructor(model: Model) {
+    super(model);
+    this.model = model;
+  }
 
   async create(data: any, user?: any) {
     const response = await this.model.create(data);

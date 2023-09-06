@@ -41,6 +41,9 @@ class UserRoute extends Routes {
     const model = new Model();
     const service = new UserService(model);
     const controller = new UserController(service);
+    console.log('Service.create', service.create)
+    console.log('Controller.create', controller.create)
+    console.log('model.create', model.create)
     this.router.post(
       '/',
       this.validateMiddleware.validateCreate,
