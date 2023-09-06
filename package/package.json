@@ -1,0 +1,38 @@
+{
+  "name": "easy-mvc",
+  "version": "1.0.0",
+  "description": "Easy mvc creator",
+  "bin": {
+    "easy-mvc": "dist/bin/easy-mvc.js"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "npm test",
+    "build": "tsc --build tsconfig.json"
+  },
+  "keywords": [
+    "MVC"
+  ],
+  "author": "Gustavo Luis de Moura Braga / github.com/@k4nl",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.10",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^26.6.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "express": "^4.18.2"
+  }
+}
